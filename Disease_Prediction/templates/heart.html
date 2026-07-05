@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+
+<h2>Heart Disease Prediction</h2>
+
+<form action="/predict_heart" method="POST">
+
+Age:
+<input type="number" name="age"><br><br>
+
+Sex:
+<input type="number" name="sex"><br><br>
+
+Chest Pain Type:
+<input type="number" name="chest_pain_type"><br><br>
+
+Resting BP:
+<input type="number" name="resting_bps"><br><br>
+
+Cholesterol:
+<input type="number" name="cholesterol"><br><br>
+
+Fasting Blood Sugar:
+<input type="number" name="fasting_blood_sugar"><br><br>
+
+Resting ECG:
+<input type="number" name="resting_ecg"><br><br>
+
+Max Heart Rate:
+<input type="number" name="max_heart_rate"><br><br>
+
+Exercise Angina:
+<input type="number" name="exercise_angina"><br><br>
+
+Oldpeak:
+<input type="text" name="oldpeak"><br><br>
+
+ST Slope:
+<input type="number" name="st_slope"><br><br>
+
+<input type="submit" value="Predict">
+
+</form>
+
+</body>
+</html>

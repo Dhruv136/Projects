@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Fraud Detection</h2>
+
+    <form action="/predict" method="POST">
+
+        <label>Amount</label>
+        <input type="number" name="amount" required>
+
+        <label>Transaction Type</label>
+        <select name="type">
+            <option>PAYMENT</option>
+            <option>TRANSFER</option>
+            <option>CASH_OUT</option>
+            <option>DEBIT</option>
+            <option>CASH_IN</option>
+        </select>
+
+        <label>Old Balance (Sender)</label>
+        <input type="number" name="oldbalanceOrg" required>
+
+        <label>New Balance (Sender)</label>
+        <input type="number" name="newbalanceOrig" required>
+
+        <label>Old Balance (Receiver)</label>
+        <input type="number" name="oldbalanceDest" required>
+
+        <label>New Balance (Receiver)</label>
+        <input type="number" name="newbalanceDest" required>
+
+        <input type="submit" value="Predict">
+
+    </form>
+
+    {% if prediction %}
+    <h3>{{ prediction }}</h3>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fertilizer Prediction</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fertilizer Prediction</h1>
+      <form action="/fertilizer" method="post" class="crop-form">
+        <label>Temperature</label>
+        <input type="number" step="any" name="temperature" placeholder="Enter temperature" required />
+
+        <label>Moisture</label>
+        <input type="number" step="any" name="moisture" placeholder="Enter moisture" required />
+
+        <label>Rainfall</label>
+        <input type="number" step="any" name="rainfall" placeholder="Enter rainfall" required />
+
+        <label>pH</label>
+        <input type="number" step="any" name="ph" placeholder="Enter pH" required />
+
+        <label>Nitrogen</label>
+        <input type="number" step="any" name="nitrogen" placeholder="Enter nitrogen" required />
+
+        <label>Phosphorous</label>
+        <input type="number" step="any" name="phosphorous" placeholder="Enter phosphorous" required />
+
+        <label>Potassium</label>
+        <input type="number" step="any" name="potassium" placeholder="Enter potassium" required />
+
+        <label>Carbon</label>
+        <input type="number" step="any" name="carbon" placeholder="Enter carbon" required />
+
+        <label>Soil Type</label>
+        <select name="soil" required>
+          {% for soil in soils %}
+          <option value="{{ soil }}">{{ soil }}</option>
+          {% endfor %}
+        </select>
+
+        <label>Crop</label>
+        <select name="crop" required>
+          {% for crop in crops %}
+          <option value="{{ crop }}">{{ crop }}</option>
+          {% endfor %}
+        </select>
+
+        <button type="submit">Predict Fertilizer</button>
+      </form>
+
+      {% if prediction %}
+      <div class="result">
+        <h2>Recommended Fertilizer: {{ prediction }}</h2>
+      </div>
+      {% endif %}
+
+      <a href="/">
+        <button type="button">Home</button>
+      </a>
+    </div>
+  </body>
+</html>

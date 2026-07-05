@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Prediction</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Crop Prediction</h1>
+      <form action="/crop" method="post" class="crop-form">
+        <label>Nitrogen (N)</label>
+        <input type="number" name="N" placeholder="Enter nitrogen" required />
+
+        <label>Phosphorus (P)</label>
+        <input type="number" name="P" placeholder="Enter phosphorus" required />
+
+        <label>Potassium (K)</label>
+        <input type="number" name="K" placeholder="Enter potassium" required />
+
+        <label>Temperature</label>
+        <input type="number" name="temperature" placeholder="Enter temperature" required />
+
+        <label>Humidity</label>
+        <input type="number" name="humidity" placeholder="Enter humidity" required />
+
+        <label>pH</label>
+        <input type="number" name="ph" placeholder="Enter pH" required />
+
+        <label>Rainfall</label>
+        <input type="number" name="rainfall" placeholder="Enter rainfall" required />
+
+        <button type="submit">Predict Crop</button>
+      </form>
+
+      {% if prediction %}
+      <div class="result">
+        <h2>Prediction: {{ prediction }}</h2>
+      </div>
+      {% endif %}
+
+      <a href="/">
+        <button type="button">Home</button>
+      </a>
+    </div>
+  </body>
+</html>
